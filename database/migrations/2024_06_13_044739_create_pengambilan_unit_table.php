@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengecekan_unit', function (Blueprint $table) {
+        Schema::create('pengambilan_unit', function (Blueprint $table) {
             $table->id();
             $table->integer('id_ttu');
             $table->integer('id_pelanggan');
@@ -19,15 +19,11 @@ return new class extends Migration
             $table->string('no_seri');
             $table->string('kelengkapan');
             $table->string('keluhan');
-            $table->dateTime('checked_at');
             $table->dateTime('done_at');
-            $table->dateTime('deliver_at');
-            $table->date('akhir_garansi');
             $table->string('perbaikan');
-            $table->integer('biaya_perbaikan');
-            $table->integer('biaya_tarnsport');
-            $table->string('resi');
-            $table->string('status');
+            $table->string('garansi');
+            $table->date('tanggal_garansi');
+            $table->integer('total_biaya');
             $table->string('keterangan');
             $table->timestamps();
 
@@ -42,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengecekan_unit');
+        Schema::dropIfExists('pengambilan_unit');
     }
 };

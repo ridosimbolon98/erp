@@ -19,10 +19,12 @@ return new class extends Migration
             $table->string('url_gmaps');
             $table->string('no_telp');
             $table->string('no_hp');
-            $table->string('unit_registrasi');
+            $table->string('id_unit');
             $table->string('tanggal_registrasi');
             $table->string('status');
             $table->timestamps();
+
+            $table->foreign('id_unit')->references('id')->on('units');
         });
     }
 

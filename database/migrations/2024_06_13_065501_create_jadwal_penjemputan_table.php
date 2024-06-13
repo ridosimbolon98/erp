@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tanda_terima', function (Blueprint $table) {
+        Schema::create('jadwal_penjemputan', function (Blueprint $table) {
             $table->id();
             $table->integer('id_pelanggan');
-            $table->integer('id_barang');
-            $table->string('jenis_perbaikan');
-            $table->string('nomor_seri');
-            $table->string('kelengkapan');
-            $table->string('keluhan');
-            $table->integer('is_cetak_ttu');
-            $table->dateTime('tanggal_cetak');
+            $table->string('alamat_penjemputan');
+            $table->string('url_gmaps');
+            $table->string('domisili');
+            $table->string('no_telp');
+            $table->string('teknisi_penjemput');
+            $table->string('tanggal_jadwal');
             $table->timestamps();
 
             $table->foreign('id_pelanggan')->references('id')->on('customers');
-            $table->foreign('id_barang')->references('id')->on('products');
         });
     }
 
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tanda_terima');
+        Schema::dropIfExists('jadwal_penjemputan');
     }
 };
