@@ -11,10 +11,8 @@ class DashboardController extends Controller
     /**
      * Menampilkan data dashboard.
      */
-    public function show(string $id): View
+    public function show(): View
     {
-        return view('user.profile', [
-            'user' => User::findOrFail($id)
-        ]);
+        return view('dashboard.index', []);
     }
 }

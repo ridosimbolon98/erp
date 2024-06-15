@@ -14,6 +14,8 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::get('/', [DashboardController::class, 'show']);
+
 Route::middleware(['auth'])->prefix('adm')->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['can:view dashboard']);
 });
