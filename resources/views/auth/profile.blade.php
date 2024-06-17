@@ -12,7 +12,7 @@
         <div class="w-full bg-gray-50 rounded-md shadow-md border border-gray-200 p-6">
             <form action="{{ route('admin.update.profile') }}" method="POST">
             @csrf
-                <div class="grid grid-cols-2 gap-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="mb-5">
                         <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                             Nama
@@ -28,7 +28,7 @@
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="mb-5">
                         <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                             Role
@@ -54,7 +54,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="mb-5">
                         <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                             Ubah Password

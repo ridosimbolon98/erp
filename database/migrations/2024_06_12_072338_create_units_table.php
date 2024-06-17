@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('no_telp');
             $table->string('url_gmaps');
+            $table->string('bank');
+            $table->string('no_rek');
+            $table->string('atas_nama');
+            $table->integer('status');
             $table->timestamps();
         });
     }

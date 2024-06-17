@@ -15,7 +15,7 @@
     </div>
 
     <nav class="mt-4">
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="{{ route('admin.dashboard') }}" data-path="/admin/dashboard">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -27,8 +27,8 @@
             <span class="mx-3">Dashboard</span>
         </a>
 
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/ttu">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,8 +39,8 @@
             <span class="mx-3">Tanda Terima</span>
         </a>
 
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/pengecekan">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -51,8 +51,8 @@
             <span class="mx-3">Pengecekan</span>
         </a>
 
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/pengambilan">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
             </svg>
@@ -60,8 +60,8 @@
             <span class="mx-3">Pengambilan</span>
         </a>
 
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/return/unit">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
             </svg>
@@ -72,8 +72,8 @@
 
         <div x-data="{ menuStatusOpen: false }" class="relative">
             <button @click="menuStatusOpen = ! menuStatusOpen"
-                class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
-                href="#">
+                class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
+                data-path="/admin/status/perbaikan">
         
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -104,8 +104,8 @@
         
         <div x-data="{ menuDeliveryOpen: false }" class="relative">
             <button @click="menuDeliveryOpen = ! menuDeliveryOpen"
-                class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
-                href="#">
+                class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
+                data-path="/admin/delivery">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                 </svg>  
@@ -128,8 +128,8 @@
 
         <div x-data="{ menuDeliveryOpen: false }" class="relative">
             <button @click="menuDeliveryOpen = ! menuDeliveryOpen"
-                class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
-                href="#">
+                class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
+                data-path="/admin/master">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
                 </svg>  
@@ -143,15 +143,15 @@
                 <div class="pl-12 pr-2">
                     <a href="#" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Barang</a>
                     <a href="#" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Merk</a>
-                    <a href="#" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Pelanggan</a>
-                    <a href="#" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Unit</a>
+                    <a href="{{ route('admin.master.pelanggan') }}" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Pelanggan</a>
+                    <a href="{{ route('admin.master.unit') }}" class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md" role="menuitem">Unit</a>
                 </div>
             </div>
             <!-- Submenu -->
         </div>
         
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/penjualan">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
             </svg>  
@@ -159,8 +159,8 @@
             <span class="mx-3">Penjualan</span>
         </a>
         
-        <a class="flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#">
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="#" data-path="/admin/setting">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />

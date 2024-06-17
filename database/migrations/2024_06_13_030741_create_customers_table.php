@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('url_gmaps');
-            $table->string('no_telp');
-            $table->string('no_hp');
+            $table->string('no_telp')->nullable();
+            $table->string('no_hp')->nullable();
             $table->unsignedBigInteger('id_unit');
-            $table->string('tanggal_registrasi');
+            $table->dateTime('tanggal_registrasi');
             $table->string('status');
             $table->timestamps();
 
