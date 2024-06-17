@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -14,8 +15,20 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', [DashboardController::class, 'show']);
+Route::get('/', [DashboardController::class, 'show'])->middleware(['auth']);
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/registration','registration');
+    Route::post('/registration','registerUser')->name('register-user');
+    Route::get('/login', 'index')->name('login');
+    Route::post('/authenticate','loginUser')->name('authenticate');
+    Route::get('/logout','logout')->name('logout');
+});
 
-Route::middleware(['auth'])->prefix('adm')->group(function() {
-    Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['can:view dashboard']);
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
+    // Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['can:view dashboard']);
+    Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard');
+    Route::get('/setting/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::post('/setting/profile', [DashboardController::class, 'updateProfile'])->name('update.profile');
 });

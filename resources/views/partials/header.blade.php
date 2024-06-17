@@ -11,7 +11,7 @@
   <div class="flex items-center">
       <div x-data="{ dropdownOpen: false }" class="relative">
             <div class="flex items-center justify-end gap-2">
-                <h3 class="text-md text-gray-700 font-semibold">Username</h3>
+                <h3 class="text-md text-gray-700 font-semibold">{{ Auth::user()->name }}</h3>
                 <button @click="dropdownOpen = ! dropdownOpen"
                     class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
                     <img class="object-cover w-full h-full"
@@ -26,11 +26,9 @@
             <div x-show="dropdownOpen"
                 class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
                 style="display: none;">
-                <a href="#"
+                <a href="{{ route('admin.profile') }}"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                <a href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
-                <a href="#"
+                <a href="{{ route('logout') }}"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
             </div>
       </div>

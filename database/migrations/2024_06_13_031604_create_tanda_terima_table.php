@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tanda_terima', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pelanggan');
-            $table->integer('id_barang');
+            $table->unsignedBigInteger('id_pelanggan');
+            $table->unsignedBigInteger('id_barang');
             $table->string('jenis_perbaikan');
             $table->string('nomor_seri');
             $table->string('kelengkapan');

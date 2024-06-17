@@ -34,8 +34,10 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     {{-- scripts js --}}
-    @stack('scripts')
+    @yield('scripts')
     {{-- scripts js --}}
   </body>
 </html>

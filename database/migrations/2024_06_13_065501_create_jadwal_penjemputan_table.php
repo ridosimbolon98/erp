@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jadwal_penjemputan', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pelanggan');
+            $table->unsignedBigInteger('id_pelanggan');
             $table->string('alamat_penjemputan');
             $table->string('url_gmaps');
             $table->string('domisili');

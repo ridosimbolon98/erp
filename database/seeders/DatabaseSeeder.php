@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name'     => 'Developer',
             'email'    => 'admin@mail.dev',
-            'password' => Hash::make(md5('rahasia--')),
+            'password' => Hash::make('rahasia--'),
             'role'     => 0,
             'unit'     => 1,
             'jabatan'  => 'ADMIN',

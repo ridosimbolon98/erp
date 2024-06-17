@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('return_unit', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_tanda_terima');
-            $table->integer('id_pelanggan');
-            $table->integer('id_barang');
+            $table->unsignedBigInteger('id_ttu');
+            $table->unsignedBigInteger('id_pelanggan');
+            $table->unsignedBigInteger('id_barang');
             $table->string('no_seri');
             $table->string('kelengkapan');
             $table->string('keluhan');
