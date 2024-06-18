@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 
@@ -41,5 +42,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     Route::get('/master/pelanggan', [CustomerController::class, 'index'])->name('master.pelanggan');
     Route::post('/master/pelanggan', [CustomerController::class, 'store'])->name('master.pelanggan');
     Route::post('/master/pelanggan/update', [CustomerController::class, 'update'])->name('master.pelanggan.update');
+    
+    // Pengaturan User
+    Route::get('/pengaturan', [UserController::class, 'index'])->name('pengaturan');
 
 });
