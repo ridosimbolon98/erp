@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     Route::post('/master/pelanggan/update', [CustomerController::class, 'update'])->name('master.pelanggan.update');
     
     // Pengaturan User
-    Route::get('/pengaturan', [UserController::class, 'index'])->name('pengaturan');
+    Route::get('/pengaturan/user', [UserController::class, 'index'])->name('pengaturan.user');
+    Route::get('/pengaturan/role', [UserController::class, 'roles'])->name('pengaturan.role');
 
 });

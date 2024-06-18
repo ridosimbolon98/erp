@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Units;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -11,6 +14,26 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('pengaturan.user', []);
+        $units = Units::where('status', 1)->orderBy('name', 'asc')->get();
+        $roles = Role::get();
+        
+        return view('pengaturan.user', [
+            'units' => $units,
+            'roles' => $roles,
+        ]);
+    }
+    
+    /**
+     * Menampilkan halaman roles
+     */
+    public function roles(): View
+    {
+        $units = Units::where('status', 1)->orderBy('name', 'asc')->get();
+        $roles = Role::get();
+        
+        return view('pengaturan.role', [
+            'units' => $units,
+            'roles' => $roles,
+        ]);
     }
 }
