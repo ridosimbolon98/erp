@@ -45,7 +45,7 @@ class UnitController extends Controller
                 'position' => 'top-center',
             ])
             ->success('Berhasil tambah cabang baru');
-            return redirect()->route('admin.master.unit')->with('failed', 'Berhasil tambah data cabang baru.');
+            return redirect()->route('admin.master.unit')->with('success', 'Berhasil tambah data cabang baru.');
         } else {
             flash()
             ->options([

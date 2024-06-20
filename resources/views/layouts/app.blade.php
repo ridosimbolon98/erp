@@ -40,6 +40,8 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- Sweetalert2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>

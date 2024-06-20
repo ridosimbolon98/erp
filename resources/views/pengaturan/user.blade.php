@@ -21,44 +21,24 @@
             <th class="border-r border-b border-t border-gray-300" data-priority="2">Email</th>
             <th class="border-r border-b border-t border-gray-300" data-priority="3">Role</th>
             <th class="border-r border-b border-t border-gray-300" data-priority="4">Cabang</th>
-            <th class="border-r border-b border-t border-gray-300" data-priority="5">Created At</th>
+            <th class="border-r border-b border-t border-gray-300" data-priority="5">Status</th>
             <th class="border-r border-b border-t border-gray-300" data-priority="6">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="text-gray-700 text-sm ">
-            <td class="border-r border-b border-l border-gray-300">Tiger Nixon</td>
-            <td class="border-r border-b border-gray-300">ridosimbolon98@mail.com</td>
-            <td class="border-r border-b border-gray-300 text-center ">OWNER</td>
-            <td class="border-r border-b border-gray-300">Cabang Megawon</td>
-            <td class="border-r border-b border-gray-300text-center">18/08/2024</td>
-            <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2">
-              <a href="" class="bg-blue-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Edit</a>
-              <a href="" class="bg-red-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Disable</a>
-            </td>
-          </tr>
-          <tr class="text-gray-700 text-sm ">
-            <td class="border-r border-b border-l border-gray-300">Tiger Nixon</td>
-            <td class="border-r border-b border-gray-300">ridosimbolon98@mail.com</td>
-            <td class="border-r border-b border-gray-300 text-center ">OWNER</td>
-            <td class="border-r border-b border-gray-300">Cabang Megawon</td>
-            <td class="border-r border-b border-gray-300text-center">18/08/2024</td>
-            <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2">
-              <a href="" class="bg-blue-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Edit</a>
-              <a href="" class="bg-red-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Disable</a>
-            </td>
-          </tr>
-          <tr class="text-gray-700 text-sm ">
-            <td class="border-r border-b border-l border-gray-300">Tiger Nixon</td>
-            <td class="border-r border-b border-gray-300">ridosimbolon98@mail.com</td>
-            <td class="border-r border-b border-gray-300 text-center ">OWNER</td>
-            <td class="border-r border-b border-gray-300">Cabang Megawon</td>
-            <td class="border-r border-b border-gray-300text-center">18/08/2024</td>
-            <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2">
-              <a href="" class="bg-blue-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Edit</a>
-              <a href="" class="bg-red-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Disable</a>
-            </td>
-          </tr>
+          @foreach ($users as $user)
+            <tr class="text-gray-700 text-sm ">
+              <td class="border-r border-b border-l border-gray-300">{{ $user->name }}</td>
+              <td class="border-r border-b border-gray-300">{{ $user->email }}</td>
+              <td class="border-r border-b border-gray-300 text-center ">{{ $user->detail_role->name }}</td>
+              <td class="border-r border-b border-gray-300">{{ $user->detail_cabang->name }}</td>
+              <td class="border-r border-b border-gray-300 text-center {{ $user->status === 1 ? 'text-green-500' : 'text-red-500' }}">{{ $user->status === 1 ? 'active' : 'inactive' }}</td>
+              <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2">
+                <a href="" class="bg-blue-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Edit</a>
+                <a href="" class="bg-red-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Disable</a>
+              </td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

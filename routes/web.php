@@ -46,5 +46,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     // Pengaturan User
     Route::get('/pengaturan/user', [UserController::class, 'index'])->name('pengaturan.user');
     Route::get('/pengaturan/role', [UserController::class, 'roles'])->name('pengaturan.role');
-
+    Route::post('/pengaturan/role', [UserController::class, 'store_role'])->name('pengaturan.role.store');
+    Route::delete('/pengaturan/role/delete/{id}', [UserController::class, 'delete_role'])->name('pengaturan.role.delete');
 });
