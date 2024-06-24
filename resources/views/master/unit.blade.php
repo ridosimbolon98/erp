@@ -220,7 +220,7 @@
                         <input type="text" name="atas_nama" id="edit_atas_nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="input atas nama pemilik rek" required="">                 
                     </div>
                     <div class="col-span-2">
-                        <label for="edit_atas_nama" class="block mb-2 text-sm font-medium text-gray-900 ">Status</label>
+                        <label for="edit_status1" class="block mb-2 text-sm font-medium text-gray-900 ">Status</label>
                         <div class="flex items-center">
                             <div class="flex items-center me-4">
                                 <input id="edit_status1" type="radio" value="1" name="status" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">

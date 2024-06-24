@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
@@ -26,6 +27,79 @@ class UserController extends Controller
             'units' => $units,
             'roles' => $roles,
         ]);
+    }
+
+    /**
+     * Menambah user baru
+     */
+    public function store_user(Request $request)
+    {
+        $user           = $request->user();
+        $name           = trim($request->nama);
+        $email          = trim($request->email);
+        $password       = $request->password;
+        $konf_password  = $request->konf_password;
+        $role           = $request->role;
+        $cabang         = $request->cabang;
+
+        // cek apakah email sudah ada atau tidak
+        $isExist = User::where('email', $email)->exists();
+        if ($isExist) {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->warning('Email sudah tersedia, silakan gunakan email lainnya!');
+            return redirect()->route('admin.pengaturan.user')->with('warning', 'Email sudah tersedia, silakan gunakan email lainnya!');
+        }
+
+        if ($password !== $konf_password) {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->warning('Password dan konfirmasi password harus sama!');
+            return redirect()->route('admin.pengaturan.user')->with('warning', 'Password dan konfirmasi password harus sama!');
+        }
+
+        $insert = User::create([
+            'name'       => $name,
+            'email'      => $email,
+            'password'   => Hash::make($password),
+            'role'       => $role,
+            'unit'       => $unit,
+            'status'     => 1,
+            'created_by' => $user->username,
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        if ($insert) {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->success('Berhasil tambah user baru');
+            return redirect()->route('admin.pengaturan.user')->with('success', 'Berhasil tambah user baru.');
+        } else {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->warning('Gagal tambah user baru.');
+            return redirect()->route('admin.pengaturan.user')->with('failed', 'Gagal tambah user baru.');
+        }
+    }
+
+    /**
+     * Update data user by id
+     */
+    public function update_user(Request $request)
+    {
+        
     }
     
     /**

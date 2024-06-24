@@ -7,81 +7,81 @@
     <h3 class="text-3xl font-medium text-gray-700">Data Customer</h3>
 
     <div class="my-3 border border-gray-200 rounded-md shadow-md p-2 bg-white">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-md">
-            <div class="pb-4 bg-white">
-                <button type="button" data-modal-target="new-customer-modal" data-modal-toggle="new-customer-modal" class="bg-green-500 hover:opacity-70 text-white rounded-md shadow-md px-4 py-2">Tambah Customer</button>
-            </div>
-            <table class="w-full border boder-gray-200 rounded-md text-sm text-left rtl:text-right text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Nama
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Alamat
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Email
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            No Telp
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Url Gmaps
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Reg. Cabang
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Tgl Registrasi
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Action
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($customers as $item)
-                        <tr class="bg-white border-b hover:bg-gray-50">
-                            <td scope="row" class="px-6 py-4 text-gray-900 whitespace-nowrap ">
-                                {{ $item->nama }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->alamat }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->email }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->no_telp }}
-                            </td>
-                            <td class="px-6 py-4 text-sky-500">
-                                <a href="{{ $item->url_gmaps }}" class="text-sky-500" target="_blank" rel="noopener noreferrer">{{ $item->url_gmaps }}</a>
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->cabang->name }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->tanggal_registrasi }}
-                            </td>
-                            <td class="px-6 py-4 flex items-center gap-2 justify-center">
-                                <a href="" class="detail-btn rounded-md font-medium text-sm text-white bg-zinc-500 hover:opacity-75 px-2 py-1">Detail</a>
-                                <a href="#" 
-                                    data-item-id="{{ $item->id }}"
-                                    data-item-nama="{{ $item->nama }}"
-                                    data-item-alamat="{{ $item->alamat }}"
-                                    data-item-url-gmaps="{{ $item->url_gmaps }}"
-                                    data-item-no-telp="{{ $item->no_telp }}"
-                                    data-item-email="{{ $item->email }}"
-                                    data-item-cabang="{{ $item->id_unit }}"
-                                    data-item-tanggal-registrasi="{{ $item->tanggal_registrasi }}"
-                                    class="edit-btn rounded-md font-medium text-sm text-white bg-blue-500 hover:opacity-75 px-2 py-1">Edit</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="bg-white">
+            <button type="button" data-modal-target="new-customer-modal" data-modal-toggle="new-customer-modal" class="bg-green-500 hover:opacity-70 text-white rounded-md shadow-md px-4 py-2">Tambah Customer</button>
         </div>
+    </div>
+    <div class="bg-white p-2 rounded-md shadow-md border border-gray-200">
+        <table id="customerTable" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+            <thead>
+                <tr class="text-gray-700">
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Nama
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Alamat
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Email
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        No Telp
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Url Gmaps
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Reg. Cabang
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Tgl Registrasi
+                    </th>
+                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($customers as $item)
+                    <tr class="text-gray-700 text-sm">
+                        <td scope="row" class="border-r border-b border-l border-gray-300">
+                            {{ $item->nama }}
+                        </td>
+                        <td class="border-r border-b border-gray-300">
+                            {{ $item->alamat }}
+                        </td>
+                        <td class="border-r border-b border-gray-300">
+                            {{ $item->email }}
+                        </td>
+                        <td class="border-r border-b border-gray-300">
+                            {{ $item->no_telp }}
+                        </td>
+                        <td class="border-r border-b border-gray-300 text-sky-500">
+                            <a href="{{ $item->url_gmaps }}" class="text-sky-500" target="_blank" rel="noopener noreferrer">{{ $item->url_gmaps }}</a>
+                        </td>
+                        <td class="border-r border-b border-gray-300">
+                            {{ $item->cabang->name }}
+                        </td>
+                        <td class="border-r border-b border-gray-300">
+                            {{ $item->tanggal_registrasi }}
+                        </td>
+                        <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2 py-3">
+                            <a href="" class="detail-btn bg-zinc-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Detail</a>
+                            <a href="#" 
+                                data-item-id="{{ $item->id }}"
+                                data-item-nama="{{ $item->nama }}"
+                                data-item-alamat="{{ $item->alamat }}"
+                                data-item-url-gmaps="{{ $item->url_gmaps }}"
+                                data-item-no-telp="{{ $item->no_telp }}"
+                                data-item-email="{{ $item->email }}"
+                                data-item-cabang="{{ $item->id_unit }}"
+                                data-item-tanggal-registrasi="{{ $item->tanggal_registrasi }}"
+                                class="edit-btn bg-blue-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Edit</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -219,6 +219,16 @@
 
 @section('scripts')
 <script>
+    // datatable
+    $(document).ready(function() {
+
+        var table = $('#customerTable').DataTable({
+            responsive: true
+        })
+        .columns.adjust()
+        .responsive.recalc();
+    });
+
     // new customer modal
     document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('new-customer-modal');
