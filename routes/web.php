@@ -6,6 +6,7 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TandaTerimaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     Route::get('/master/pelanggan', [CustomerController::class, 'index'])->name('master.pelanggan');
     Route::post('/master/pelanggan', [CustomerController::class, 'store'])->name('master.pelanggan');
     Route::post('/master/pelanggan/update', [CustomerController::class, 'update'])->name('master.pelanggan.update');
+    Route::post('/master/pelanggan/disabled/{id}', [CustomerController::class, 'disabled'])->name('master.pelanggan.disabled');
     
     // Pengaturan User
     Route::get('/pengaturan/user', [UserController::class, 'index'])->name('pengaturan.user');
@@ -50,4 +52,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     Route::get('/pengaturan/role', [UserController::class, 'roles'])->name('pengaturan.role');
     Route::post('/pengaturan/role', [UserController::class, 'store_role'])->name('pengaturan.role.store');
     Route::delete('/pengaturan/role/delete/{id}', [UserController::class, 'delete_role'])->name('pengaturan.role.delete');
+    
+    // Tanda Terima Unit
+    Route::get('/ttu', [TandaTerimaController::class, 'ttu'])->name('ttu');
+    Route::post('/ttu', [TandaTerimaController::class, 'store'])->name('ttu.store');
+
 });

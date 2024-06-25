@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_unit');
             $table->dateTime('tanggal_registrasi');
             $table->string('status');
+            $table->string('updated_by');
             $table->timestamps();
 
             $table->foreign('id_unit')->references('id')->on('units');

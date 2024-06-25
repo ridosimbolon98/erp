@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
             'name'     => 'Developer',
             'email'    => 'admin@mail.dev',
             'password' => Hash::make('rahasia--'),
-            'role'     => 0,
+            'role'     => 1,
             'unit'     => 1,
-            'jabatan'  => 'ADMIN',
+            'jabatan'  => 'OWNER',
             'status'   => 1,
         ]);
     }

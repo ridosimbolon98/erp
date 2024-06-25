@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tanda_terima', function (Blueprint $table) {
             $table->id();
+            $table->string('no_ttu');
+            $table->unsignedBigInteger('id_unit');
             $table->unsignedBigInteger('id_pelanggan');
             $table->unsignedBigInteger('id_barang');
             $table->string('jenis_perbaikan');
@@ -23,6 +25,7 @@ return new class extends Migration
             $table->dateTime('tanggal_cetak');
             $table->timestamps();
 
+            $table->foreign('id_unit')->references('id')->on('units');
             $table->foreign('id_pelanggan')->references('id')->on('customers');
             $table->foreign('id_barang')->references('id')->on('products');
         });

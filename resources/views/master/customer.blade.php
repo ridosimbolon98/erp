@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container px-6 py-4 mx-auto">
-    <h3 class="text-3xl font-medium text-gray-700">Data Customer</h3>
+    <h3 class="text-xl font-medium text-gray-700">Data Customer</h3>
 
     <div class="my-3 border border-gray-200 rounded-md shadow-md p-2 bg-white">
         <div class="bg-white">
@@ -12,61 +12,58 @@
         </div>
     </div>
     <div class="bg-white p-2 rounded-md shadow-md border border-gray-200">
-        <table id="customerTable" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-            <thead>
-                <tr class="text-gray-700">
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+        <table id="customerTable" class="display compact hover" style="width:100%; padding-top: 1em; padding-bottom: 1em;">
+            <thead class="bg-gray-100 border border-gray-200">
+                <tr class="text-gray-700 text-left">
+                    <th scope="col">
                         Nama
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         Alamat
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
-                        Email
-                    </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         No Telp
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         Url Gmaps
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         Reg. Cabang
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         Tgl Registrasi
                     </th>
-                    <th scope="col" class="border-r border-b border-l border-t border-gray-300">
+                    <th scope="col">
                         Action
                     </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($customers as $item)
-                    <tr class="text-gray-700 text-sm">
-                        <td scope="row" class="border-r border-b border-l border-gray-300">
+                    <tr class="text-gray-700 text-sm border-r border-l border-b border-gray-300">
+                        <td scope="row">
                             {{ $item->nama }}
                         </td>
-                        <td class="border-r border-b border-gray-300">
+                        <td>
                             {{ $item->alamat }}
                         </td>
-                        <td class="border-r border-b border-gray-300">
-                            {{ $item->email }}
-                        </td>
-                        <td class="border-r border-b border-gray-300">
+                        <td>
                             {{ $item->no_telp }}
                         </td>
-                        <td class="border-r border-b border-gray-300 text-sky-500">
+                        <td>
                             <a href="{{ $item->url_gmaps }}" class="text-sky-500" target="_blank" rel="noopener noreferrer">{{ $item->url_gmaps }}</a>
                         </td>
-                        <td class="border-r border-b border-gray-300">
+                        <td>
                             {{ $item->cabang->name }}
                         </td>
-                        <td class="border-r border-b border-gray-300">
+                        <td>
                             {{ $item->tanggal_registrasi }}
                         </td>
-                        <td class="border-r border-b border-gray-300 flex items-center justify-center gap-2 py-3">
-                            <a href="" class="detail-btn bg-zinc-500 hover:opacity-75 px-2 py-1 text-sm rounded-md shadow-sm text-white">Detail</a>
+                        <td class="flex items-center justify-center gap-2 py-3">
+                            <form id="disabled-form-{{ $item->id }}" action="{{ route('admin.master.pelanggan.disabled', ['id' => $item->id]) }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <button type="button" class="rounded-md font-medium text-sm text-white bg-red-500 hover:opacity-75 px-2 py-1" onclick="confirmDisabled({{ $item->id }})">Disabled</button>
                             <a href="#" 
                                 data-item-id="{{ $item->id }}"
                                 data-item-nama="{{ $item->nama }}"
@@ -299,6 +296,24 @@
             modal.classList.add('hidden');
         });
     });
+
+
+    // delete customer confirmation
+    function confirmDisabled(custId) {
+        Swal.fire({
+            text: 'Apakah anda yakin disabled data pelanggan tersebut?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Disabled!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('disabled-form-' + custId).submit();
+            }
+        })
+    }
 
     
 </script>

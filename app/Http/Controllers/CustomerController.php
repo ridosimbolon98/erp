@@ -96,4 +96,37 @@ class CustomerController extends Controller
         }
     }
 
+    /**
+     * Disabled data customer by id
+     */
+    public function disabled(Request $request, $id)
+    {
+        $user = $request->user();
+        $data_customer = [
+            'status'      => 0,
+            // 'updated_by'  => $user->email,
+            'updated_at'  => date('Y-m-d H:i:s'),
+        ];
+
+        $update = Customer::where('id', $id)->update($data_customer);
+
+        if ($update) {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->success('Berhasil disabled data pelanggan.');
+            return redirect()->route('admin.master.pelanggan')->with('success', 'Berhasil disabled data pelanggan.');
+        } else {
+            flash()
+            ->options([
+                'timeout' => 3000, // 3 seconds
+                'position' => 'top-center',
+            ])
+            ->warning('Gagal disabled data pelanggan.');
+            return redirect()->route('admin.master.pelanggan')->with('failed', 'Gagal disabled data pelanggan.');
+        }
+    }
+
 }

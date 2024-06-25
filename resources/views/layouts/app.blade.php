@@ -9,8 +9,7 @@
     <title>@yield('title', 'Awan TV')</title>
     
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">  
+    <link href="https://cdn.datatables.net/2.0.8/css/dataTables.tailwindcss.css" rel="stylesheet"> 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">  
   </head>
   <body>
@@ -39,12 +38,12 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- Sweetalert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.tailwindcss.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.4"></script>
 
     {{-- scripts js --}}
     @yield('scripts')

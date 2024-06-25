@@ -28,7 +28,7 @@
         </a>
 
         <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#" data-path="/admin/ttu">
+            href="{{ route('admin.ttu') }}" data-path="/admin/ttu">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -36,7 +36,7 @@
                 </path>
             </svg>
 
-            <span class="mx-3">Tanda Terima</span>
+            <span class="mx-3">Tanda Terima Unit</span>
         </a>
 
         <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"

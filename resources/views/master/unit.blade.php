@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container px-6 py-4 mx-auto">
-    <h3 class="text-3xl font-medium text-gray-700">Data Cabang</h3>
+    <h3 class="text-xl font-medium text-gray-700">Data Cabang</h3>
 
     <div class="my-3 border border-gray-200 rounded-md shadow-md p-2 bg-white">
         <div class="relative overflow-x-auto shadow-md sm:rounded-md">
