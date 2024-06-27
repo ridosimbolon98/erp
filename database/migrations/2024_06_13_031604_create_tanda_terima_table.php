@@ -14,20 +14,21 @@ return new class extends Migration
         Schema::create('tanda_terima', function (Blueprint $table) {
             $table->id();
             $table->string('no_ttu');
-            $table->unsignedBigInteger('id_unit');
             $table->unsignedBigInteger('id_pelanggan');
-            $table->unsignedBigInteger('id_barang');
-            $table->string('jenis_perbaikan');
+            $table->unsignedBigInteger('lokasi_unit');
+            $table->string('merk');
+            $table->string('model');
             $table->string('nomor_seri');
+            $table->string('jenis_perbaikan');
             $table->string('kelengkapan');
             $table->string('keluhan');
-            $table->integer('is_cetak_ttu');
-            $table->dateTime('tanggal_cetak');
+            $table->integer('is_cetak_ttu')->nullable(true);
+            $table->dateTime('tanggal_cetak')->nullable(true);
+            $table->string('created_by');
             $table->timestamps();
 
-            $table->foreign('id_unit')->references('id')->on('units');
+            $table->foreign('lokasi_unit')->references('id')->on('units');
             $table->foreign('id_pelanggan')->references('id')->on('customers');
-            $table->foreign('id_barang')->references('id')->on('products');
         });
     }
 

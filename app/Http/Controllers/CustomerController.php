@@ -27,6 +27,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $user = $request->user();
         $data_customer = [
             'nama'               => $request->nama,
             'alamat'             => $request->alamat,
@@ -36,6 +37,7 @@ class CustomerController extends Controller
             'id_unit'            => $request->cabang,
             'tanggal_registrasi' => date('Y-m-d'),
             'status'             => 1,
+            'updated_by'         => $user->email,
         ];
 
         $insert = Customer::create($data_customer);

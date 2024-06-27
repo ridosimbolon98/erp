@@ -6,6 +6,7 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengecekanController;
 use App\Http\Controllers\TandaTerimaController;
 
 /*
@@ -56,5 +57,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     // Tanda Terima Unit
     Route::get('/ttu', [TandaTerimaController::class, 'ttu'])->name('ttu');
     Route::post('/ttu', [TandaTerimaController::class, 'store'])->name('ttu.store');
+    
+    // Pengecekan Unit
+    Route::get('/pengecekan', [PengecekanController::class, 'pengecekan_unit'])->name('pengecekan');
+    Route::post('/pengecekan', [PengecekanController::class, 'store'])->name('pengecekan.store');
 
 });

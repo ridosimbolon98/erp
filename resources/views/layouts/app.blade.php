@@ -12,7 +12,7 @@
     <link href="https://cdn.datatables.net/2.0.8/css/dataTables.tailwindcss.css" rel="stylesheet"> 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">  
   </head>
-  <body>
+  <body id="app">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js"></script>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
       <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>

@@ -1,15 +1,15 @@
 <header class="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600">
-  <div class="flex items-center">
-      <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-          </svg>
-      </button>
-  </div>
+    <div class="flex items-center">
+        <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+        </button>
+    </div>
 
-  <div class="flex items-center">
-      <div x-data="{ dropdownOpen: false }" class="relative">
+    <div class="flex items-center">
+        <div x-data="{ dropdownOpen: false }" class="relative">
             <div class="flex items-center justify-end gap-2">
                 <h3 class="text-md text-gray-700 font-semibold">{{ Auth::user()->name }}</h3>
                 <button @click="dropdownOpen = ! dropdownOpen"
@@ -31,6 +31,6 @@
                 <a href="{{ route('logout') }}"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
             </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </header>
