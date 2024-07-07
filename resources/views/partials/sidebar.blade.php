@@ -60,7 +60,7 @@
         </a>
 
         <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#" data-path="/admin/pengambilan">
+            href="{{ route('admin.pengambilan') }}" data-path="/admin/pengambilan">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="h-6 w-6">
                 <path stroke-linecap="round" stroke-linejoin="round"

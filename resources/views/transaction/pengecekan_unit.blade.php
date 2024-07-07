@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tanda Terima Unit')
+@section('title', 'Pengecekan Unit')
 
 @section('content')
     <div class="container px-6 py-4 mx-auto">

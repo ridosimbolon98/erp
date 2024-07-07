@@ -99,4 +99,19 @@ class TandaTerimaController extends Controller
             return redirect()->route('admin.ttu')->with('failed', 'Gagal input tanda terima baru.');
         }
     }
+
+    /**
+     * Cari data tanda terima berdasarkan no ttu
+     */
+    public function cari_ttu(Request $request)
+    {
+        $no_ttu = $request->input('no_ttu');
+        $data = TandaTerimaUnit::with(['detail_pelanggan','detail_cabang'])->where('no_ttu', $no_ttu)->first();
+
+        if ($data) {
+            return response()->json(['success' => true, 'data' => $data]);
+        } else {
+            return response()->json(['success' => false, 'message' => 'No. Tanda Terima Unit tidak terdaftar/ sedang dalam proses pengerjaan/ sudah diambil/ berada di cabang lain']);
+        }
+    }
 }
