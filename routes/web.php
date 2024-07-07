@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengecekanController;
 use App\Http\Controllers\PengambilanController;
 use App\Http\Controllers\TandaTerimaController;
+use App\Http\Controllers\StatusPerbaikanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,5 +69,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     // Pengambilan Unit
     Route::get('/pengambilan', [PengambilanController::class, 'pengambilan_unit'])->name('pengambilan');
     Route::post('/pengambilan', [PengambilanController::class, 'store'])->name('pengambilan.store');
+    
+    // Return Unit
+    Route::get('/return', [ReturnController::class, 'return_unit'])->name('return');
+    Route::post('/return', [ReturnController::class, 'store'])->name('return.store');
+
+    // Status perbaikan
+    Route::get('/perbaikan/antrian', [StatusPerbaikanController::class, 'status_perbaikan_antrian'])->name('perbaikan.antrian');
+    Route::get('/perbaikan/konfirmasi', [StatusPerbaikanController::class, 'status_perbaikan_menunggu_konfirmasi'])->name('perbaikan.konfirmasi');
+    Route::get('/perbaikan/pengecekan', [StatusPerbaikanController::class, 'status_perbaikan_pengecekan'])->name('perbaikan.pengecekan');
+    Route::get('/perbaikan/proses', [StatusPerbaikanController::class, 'status_perbaikan_proses'])->name('perbaikan.proses');
+    Route::get('/perbaikan/selesai', [StatusPerbaikanController::class, 'status_perbaikan_selesai'])->name('perbaikan.selesai');
+    Route::get('/perbaikan/dibatalkan', [StatusPerbaikanController::class, 'status_perbaikan_dibatalkan'])->name('perbaikan.dibatalkan');
+    Route::get('/perbaikan/riwayat', [StatusPerbaikanController::class, 'status_perbaikan_riwayat'])->name('perbaikan.riwayat');
 
 });

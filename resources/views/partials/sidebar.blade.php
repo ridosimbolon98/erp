@@ -71,13 +71,12 @@
         </a>
 
         <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="#" data-path="/admin/return/unit">
+            href="{{ route('admin.return') }}" data-path="/admin/return">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
             </svg>
-
 
             <span class="mx-3">Return Unit</span>
         </a>
@@ -85,7 +84,7 @@
         <div x-data="{ menuStatusOpen: false }" class="relative">
             <button @click="menuStatusOpen = ! menuStatusOpen"
                 class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"
-                data-path="/admin/status/perbaikan">
+                data-path="/admin/perbaikan">
 
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -102,25 +101,25 @@
                 class="origin-top-right mt-2 w-full rounded-md shadow-lg focus:outline-none" role="menu"
                 aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                 <div class="pl-12 pr-2">
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.antrian') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Dalam Antrian</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.pengecekan') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Proses Pengecekan</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.konfirmasi') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Menunggu Konfirmasi</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.proses') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Proses Pengerjaan</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.selesai') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Selesai Dikerjakan</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.dibatalkan') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Dibatalkan</a>
-                    <a href="#"
+                    <a href="{{ route('admin.perbaikan.riwayat') }}"
                         class="flex items-center px-2 py-2 text-gray-500 text-md hover:bg-gray-600 hover:text-gray-900 rounded-md"
                         role="menuitem">Riwayat Perbaikan</a>
                 </div>
