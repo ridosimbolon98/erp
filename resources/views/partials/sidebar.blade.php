@@ -127,6 +127,17 @@
             <!-- Submenu -->
         </div>
 
+        <a class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            href="{{ route('admin.pembelian.sparepart') }}" data-path="/admin/pembelian">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+            </svg>
+
+            <span class="mx-3">Pembelian Sparepart</span>
+        </a>
+
         <div x-data="{ menuDeliveryOpen: false }" class="relative">
             <button @click="menuDeliveryOpen = ! menuDeliveryOpen"
                 class="sidebar-link flex items-center px-6 py-2 mt-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 w-full"

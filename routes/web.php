@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PengecekanController;
 use App\Http\Controllers\PengambilanController;
 use App\Http\Controllers\TandaTerimaController;
@@ -82,5 +83,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     Route::get('/perbaikan/selesai', [StatusPerbaikanController::class, 'status_perbaikan_selesai'])->name('perbaikan.selesai');
     Route::get('/perbaikan/dibatalkan', [StatusPerbaikanController::class, 'status_perbaikan_dibatalkan'])->name('perbaikan.dibatalkan');
     Route::get('/perbaikan/riwayat', [StatusPerbaikanController::class, 'status_perbaikan_riwayat'])->name('perbaikan.riwayat');
+
+    // Pembelian Sparepart
+    Route::get('/pembelian/sparepart', [PembelianController::class, 'pembelian_sparepart'])->name('pembelian.sparepart');
 
 });
