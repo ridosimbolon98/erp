@@ -187,6 +187,20 @@
                             class="col-span-8 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-primary-600 focus:border-primary-600 focus:outline-none block w-full px-2 py-1"
                             required placeholder="input harga sparepart">
                     </div>
+
+                    <div class="grid grid-cols-12 gap-2 items-center px-2 py-1">
+                        <label for="harga" class="col-span-4 text-md font-medium text-gray-800">Atas Nama</label>
+                        <input type="text" name="atas_nama" id="atas_nama"
+                            class="col-span-8 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-primary-600 focus:border-primary-600 focus:outline-none block w-full px-2 py-1"
+                            required placeholder="input atas nama">
+                    </div>
+
+                    <div class="grid grid-cols-12 gap-2 items-center px-2 py-1">
+                        <label for="harga" class="col-span-4 text-md font-medium text-gray-800">No. Resi</label>
+                        <input type="text" name="nomor_resi" id="nomor_resi"
+                            class="col-span-8 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-primary-600 focus:border-primary-600 focus:outline-none block w-full px-2 py-1"
+                            required placeholder="input nomor resi">
+                    </div>
                 </div>
                 {{-- Modal Body --}}
             </div>
